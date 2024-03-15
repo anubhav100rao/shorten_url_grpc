@@ -43,7 +43,7 @@ func (s *UrlShornerServer) GetUrl(ctx context.Context, req *pb.GetUrlRequest) (*
 	return &pb.GetUrlResponse{Url: uri}, nil
 }
 
-func setUpUrlShortnerServer() {
+func SetUpUrlShortnerServer() {
 	lis, err := net.Listen("tcp", ":8080")
 	if err != nil {
 		fmt.Println("Error starting server")
