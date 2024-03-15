@@ -6,7 +6,7 @@ import (
 	"net"
 
 	pb "github.com/anubhav100rao/url_shortner/proto"
-	grpc "google.golang.org/grpc"
+	"google.golang.org/grpc"
 )
 
 type UrlShornerServer struct {
@@ -42,7 +42,6 @@ func (s *UrlShornerServer) GetUrl(ctx context.Context, req *pb.GetUrlRequest) (*
 	uri := s.mapUrls[shortUrl]
 	return &pb.GetUrlResponse{Url: uri}, nil
 }
-
 func SetUpUrlShortnerServer() {
 	lis, err := net.Listen("tcp", ":8080")
 	if err != nil {

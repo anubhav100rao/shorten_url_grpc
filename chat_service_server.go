@@ -23,7 +23,7 @@ func (s *ChatServiceServer) Chat(stream pb.ChatService_ChatServer) error {
 		req, err := stream.Recv()
 
 		if err == io.EOF {
-			return nil
+			break
 		}
 		if err != nil {
 			fmt.Println("Error receiving message")
