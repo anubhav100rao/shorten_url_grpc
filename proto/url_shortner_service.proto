@@ -1,0 +1,27 @@
+// proto service for url shortner
+
+syntax = "proto3";
+package proto;
+
+option go_package = ".";
+
+service UrlShortner {
+  rpc ShortenUrl(ShortenUrlRequest) returns (ShortenUrlResponse);
+  rpc GetUrl(GetUrlRequest) returns (GetUrlResponse);
+}
+
+message ShortenUrlRequest {
+  string url = 1;
+}
+
+message ShortenUrlResponse {
+  string short_url = 1;
+}
+
+message GetUrlRequest {
+  string short_url = 1;
+}
+
+message GetUrlResponse {
+  string url = 1;
+}
